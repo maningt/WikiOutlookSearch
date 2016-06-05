@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/elevation_5dp"
+        android:padding="@dimen/padding_10">
+
+        <ImageView
+            android:id="@+id/ic_image_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/search" />
+
+        <EditText
+            android:id="@+id/edit_text_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/ic_searchCross"
+            android:layout_toRightOf="@id/ic_image_search"
+            android:background="@drawable/shape_edit_bg"
+            android:hint="@string/edit_text__search_hint"
+            android:maxLength="20"
+            android:paddingLeft="@dimen/padding_31"
+            android:singleLine="true"
+            android:textColor="@color/txt_color_black"
+            android:textColorHint="@color/very_light_grey"
+            android:textSize="@dimen/text_size" />
+
+        <ImageButton
+            android:id="@+id/ic_searchCross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/close" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/search_suggestion_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/progressBar" />
+
+        <TextView
+            android:id="@+id/txt_view_no_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_search_result_text"
+            android:textColor="@color/txt_color_black"
+            android:textSize="@dimen/text_size"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</LinearLayout>
